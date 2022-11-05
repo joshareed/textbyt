@@ -30,7 +30,7 @@ def main(config):
         child = render.Column(
             children = [
                 render.WrappedText(
-                    content = author, 
+                    content = author,
                     color = "#D2691E",
                     linespacing = 0,
                     width = 64,
@@ -41,17 +41,17 @@ def main(config):
                     color = "#D2691E",
                 ),
                 render.Marquee(
-                    height = 32,
-                    offset_start = 32,
-                    offset_end = 32,
+                    height = 23,  # 32 - 8 (author line) - 1 (divider line)
+                    offset_start = 24,
+                    offset_end = 24,
                     child = render.WrappedText(
                         content = msg_txt,
                         width = 64,
                     ),
                     scroll_direction = "vertical",
-                )
-            ]
-        )
+                ),
+            ],
+        ),
     )
 
 def get_schema():
@@ -64,6 +64,5 @@ def get_schema():
                 desc = "The Textbyt Feed ID",
                 icon = "gear",
             ),
-
         ],
     )
